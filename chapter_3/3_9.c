@@ -1,15 +1,19 @@
-/* badcount.c -- 参数错误的情况  */
+/* 
+   该程序存在参数错误的情况
+*/
+
 #include <stdio.h>
+
 int main()
 {
-	int n = 4;
-	int m = 5;
-	float f = 7.0f;
-	float g = 8.0f;
+    int n = 4;  // 定义整型变量n并赋值为4
+    int m = 5;  // 定义整型变量m并赋值为5
+    float f = 7.0f;  // 定义浮点型变量f并赋值为7.0
+    float g = 8.0f;  // 定义浮点型变量g并赋值为8.0
 
-	printf("%d\n", n, m);
-	printf("%d %d %d\n", n);
-	printf("%f %d\n", f, g);	// %d 显示float 类型的值，其值不会被转换成int类型
+    printf("%d\n", n, m);  // 错误：只有一个格式化标识符，但传入了两个参数n和m
+    printf("%d %d %d\n", n);  // 错误：格式化标识符需要三个参数，但只提供了一个参数n
+    printf("%f %d\n", f, g);  // 错误：使用了错误的格式化标识符%d来显示浮点型变量f的值，应该使用%f
 
-	return 0;
+    return 0;
 }
